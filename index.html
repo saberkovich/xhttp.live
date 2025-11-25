@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -58,6 +58,15 @@
         .witness-name { font-weight:bold; font-size:14px; }
         .witness-title { font-size:11px; color:#666; font-style:italic; }
         @media (max-width:768px) { .columns { flex-direction:column; } .newspaper-title { font-size:32px; } .main-headline { font-size:24px; } }
+        /* Added: fun section and list of related (former) protocols */
+        .fun-section { margin:20px; padding:15px; border:2px dashed #900; background:#fff7f7; }
+        .fun-section h3 { margin:0 0 6px 0; font-size:18px; color:#600; }
+        .protocol-list { list-style:none; padding:0; display:flex; gap:10px; flex-wrap:wrap; justify-content:center; }
+        .protocol-item { border:1px solid #900; padding:10px 12px; background:#fff; border-radius:6px; cursor:pointer; min-width:140px; text-align:center; box-shadow:2px 2px 0 rgba(0,0,0,0.05); transition:transform 150ms ease, box-shadow 150ms ease; }
+        .protocol-item .name { font-weight:bold; }
+        .protocol-item .status { font-size:12px; color:#900; margin-top:6px; }
+        .protocol-item:hover { transform:translateY(-4px); box-shadow:4px 6px 8px rgba(0,0,0,0.1); }
+        .protocol-item.highlighted { background:#fff0f0; border-color:#c33; }
     </style>
 </head>
 <body>
@@ -110,6 +119,20 @@
             <p><em>"The protocol that carries the hope of uninterrupted internet access. Built to endure, designed for freedom."</em></p>
         </div>
         
+        <div class="fun-section">
+            <h3 style="text-align:center;">Related Protocols in Critical Condition</h3>
+            <p style="text-align:center; color:#600; margin-top:5px;">(Related legacy protocols that have been through a lot — some even memorialized)</p>
+            <ul class="protocol-list">
+                <li class="protocol-item" data-proto="VMess"><div class="name">VMess</div><div class="status">Status: Legacy — needs CPR</div></li>
+                <li class="protocol-item" data-proto="Trojan"><div class="name">Trojan</div><div class="status">Status: On life support — masquerading as HTTPS</div></li>
+                <li class="protocol-item" data-proto="Shadowsocks"><div class="name">Shadowsocks</div><div class="status">Status: Old guard — sipping tea in retirement</div></li>
+                <li class="protocol-item" data-proto="WireGuard"><div class="name">WireGuard</div><div class="status">Status: Weak heartbeat — patched, still fighting</div></li>
+                <li class="protocol-item" data-proto="Vless"><div class="name">Vless</div><div class="status">Status: Deceased — memorialized with flowers</div></li>
+            </ul>
+            <p style="text-align:center; font-size:12px; color:#666;">Click a protocol for a tasteful (and slightly sarcastic) epitaph.</p>
+            <div id="eulogy" style="text-align:center; margin-top:10px; font-style:italic; color:#333;"></div>
+        </div>
+
         <div class="stats-box">
             <div class="stats-title">ADOPTION STATISTICS (Oct–Nov 2025)</div>
             <div class="graph">
@@ -164,6 +187,30 @@ Supported Clients: Xray, custom HTTP clients
                 <div class="witness-title">Independent Security Researcher</div>
                 <p>"Finally, a protocol that anticipates DPI evolution instead of reacting to it."</p>
             </div>
+            
+            <div class="witness">
+                <div class="witness-name">Sam Buffer</div>
+                <div class="witness-title">Systems Administrator, EdgeOps</div>
+                <p>"Rolling out XHTTP was surprisingly painless. Our monitoring shows far fewer false positives and more reliable failovers. Ops team gives it two thumbs up."</p>
+            </div>
+
+            <div class="witness">
+                <div class="witness-name">Priya Patel</div>
+                <div class="witness-title">Privacy Advocate, Open Web Coalition</div>
+                <p>"XHTTP demonstrates that careful design can provide privacy at scale. It's not a silver bullet, but it's a hopeful step toward keeping information flowing."</p>
+            </div>
+
+            <div class="witness">
+                <div class="witness-name">Marco Dev</div>
+                <div class="witness-title">Client Developer</div>
+                <p>"We added XHTTP support in our client in under a week. The community PRs were incredibly helpful — great ecosystem collaboration."</p>
+            </div>
+
+            <div class="witness">
+                <div class="witness-name">Anonymous User #42</div>
+                <div class="witness-title">End User</div>
+                <p>"I streamed my first uncensored movie last night. Feels weirdly historic. Thank you, whoever wrote the padding logic."</p>
+            </div>
         </div>
         
         <div class="memorial-ads">
@@ -177,12 +224,30 @@ Supported Clients: Xray, custom HTTP clients
                 <strong>Xray Core Project</strong><br>
                 "Proud to integrate XHTTP as the new standard transport."
             </div>
+            
+            <div class="memorial-ad">
+                <strong>Protocol Mortuary Services</strong><br>
+                "Dignified final rites for deprecated protocols. We handle the deprecation paperwork so you don't have to."
+            </div>
+
+            <div class="memorial-ad">
+                <strong>DPI Detection Inc.</strong><br>
+                "Now hiring former circumvention developers. Competitive salary. Join the winning team!"<br>
+                <em style="font-size:8px;">*Ad placement in memorial edition is ironic and does not reflect editorial position</em>
+            </div>
         </div>
         
         <div style="text-align:center; padding:20px; border-top:2px solid #000; font-size:12px;">
             <p><strong>The Protocol Times</strong> - Serving the Internet Community Since 1969<br>
             Editor-in-Chief: Tim Berners-Lee Jr.<br>
             <em>"Protocols evolve, but digital freedom persists."</em></p>
+        </div>
+        
+        <div style="padding:20px; border-top:1px dashed #ccc; margin:20px; background:#fffaf8;">
+            <h3 style="text-align:center; margin:0 0 8px 0;">Memorial Service Details</h3>
+            <p style="text-align:center; margin:0 0 6px 0;"><strong>When:</strong> December 1, 2025 • 19:00 UTC — virtual service on #xhttp-memorial</p>
+            <p style="text-align:center; margin:0 0 6px 0;"><strong>Dress Code:</strong> All black terminals preferred. Dark themes encouraged.</p>
+            <p style="text-align:center; color:#666; margin-top:6px;">In lieu of flowers, please send bug reports and tasteful pull requests to the XHTTP repo.</p>
         </div>
     </div>
     
@@ -194,8 +259,13 @@ Supported Clients: Xray, custom HTTP clients
             setTimeout(() => { document.body.style.filter='sepia(5%) contrast(95%)'; }, 5000);
             
             document.querySelector('.protocol-photo').addEventListener('click', function() {
-                this.innerHTML='🚀';
-                setTimeout(() => this.innerHTML='🌐', 2000);
+                const el = this;
+                const seq = ['💥','💀','🚀','🌐'];
+                // show a short sequence of emojis for extra dramatic effect
+                el.innerHTML = seq[0];
+                setTimeout(() => el.innerHTML = seq[1], 350);
+                setTimeout(() => el.innerHTML = seq[2], 900);
+                setTimeout(() => el.innerHTML = seq[3], 1600);
             });
             
             let viewCount = localStorage.getItem('xhttp-views') || 1000;
@@ -204,7 +274,27 @@ Supported Clients: Xray, custom HTTP clients
             
             const footer = document.querySelector('.memorial-ads');
             footer.innerHTML += `<p style="margin-top:20px; font-size:10px; color:#666;">This page has been viewed ${viewCount} times</p>`;
+
+            // Protocol click handlers: show delicate epitaphs and highlight briefly
+            document.querySelectorAll('.protocol-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    const proto = item.dataset.proto;
+                    const lines = {
+                        'VMess': 'VMess — veteran courier of packets; retired to a museum of broken headers.',
+                        'Trojan': 'Trojan — retired to a life of mimicry; still suspiciously friendly.',
+                        'Shadowsocks': 'Shadowsocks — enjoying sunsets, occasionally whispering lightweight ciphers.',
+                        'WireGuard': 'WireGuard — patched frequently, insists it is "fine".',
+                        'Vless': 'Vless — laid to rest; its legacy lives in comment threads.'
+                    };
+                    const e = document.getElementById('eulogy');
+                    e.textContent = lines[proto] || ('Protocol ' + proto + ' — status unknown.');
+                    item.classList.add('highlighted');
+                    setTimeout(() => item.classList.remove('highlighted'), 1200);
+                });
+            });
+
         });
     </script>
 </body>
 </html>
+
